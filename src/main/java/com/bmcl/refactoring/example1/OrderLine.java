@@ -3,14 +3,17 @@ package com.bmcl.refactoring.example1;
 public class OrderLine {
     private Product product;
     private int quantity;
-    public Product getProduct() {
-        return this.product;
+    public Product getProduct(){
+        return product;
     }
     public void setProduct(Product product) {
         this.product = product;
     }
-    public int getQuantity() {
+    public int getQuantity(){
         return this.quantity;
+    }
+    public double getTotal(){
+        return getProduct().getPrice()*getQuantity();
     }
     public void setQuantity(int quantity) {
         this.quantity = quantity;
@@ -19,11 +22,8 @@ public class OrderLine {
         this.product = product;
         this.quantity = quantity;
     }
-    public double getTotal(){
-        return getProduct().getPrice() * getQuantity();
-    }
     @Override
-    public String toString() {
-        return getProduct().getName() + "(x" + getQuantity() + "): " + (getTotal());
+    public String toString(){
+        return getProduct().getName() + "(x" + getQuantity() + "):" + (getTotal());
     }
 }

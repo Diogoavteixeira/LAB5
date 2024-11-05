@@ -9,13 +9,15 @@ public class Order {
     public Order() {
         lines = new ArrayList<>();
     }
-    public void add(Product product, int quantity) {
 
+    public void add(Product product, int quantity) {
         lines.add(new OrderLine(product, quantity));
     }
+
     public boolean isElegibleForFreeDelivery() {
         return getTotal()>100;
     }
+
     private double getTotal() {
         double total = 0;
         for (OrderLine line : lines)
@@ -25,9 +27,8 @@ public class Order {
     public String printOrder() {
         StringBuffer printBuffer = new StringBuffer();
         for (OrderLine line : lines)
-            printBuffer.append(line.toString() + "\n");
-        printBuffer.append("Total: " + getTotal());
+            printBuffer.append(line. toString() + "\n");
+        printBuffer.append("Total: "+ getTotal());
         return printBuffer.toString();
-
     }
 }

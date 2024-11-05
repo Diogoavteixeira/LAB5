@@ -3,7 +3,7 @@ package com.bmcl.refactoring.example1;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 public class OrderTest {
 
@@ -32,8 +32,8 @@ public class OrderTest {
     public void printOrder() {
         String printed = getLargeOrder().printOrder();
         assertEquals(
-                "Playstation 4(x2): 800.0\n" +
-                        "Red Dead Redemption 2(x1): 50.0\n" +
+                "Playstation 4(x2):800.0\n" +
+                        "Red Dead Redemption 2(x1):50.0\n" +
                         "Total: 850.0", printed);
     }
 }
